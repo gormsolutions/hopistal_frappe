@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "HMHCA-STMENT-.YYYY.-.#####",
+ "creation": "2024-08-23 11:53:05.474739",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "customer",
+  "column_break_yurt",
+  "from_date",
+  "to_date",
+  "tel",
+  "section_break_bwmh",
+  "statement_details",
+  "section_break_bmtv",
+  "total_invoices",
+  "total_outstanding_amount",
+  "column_break_iaca",
+  "total_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fetch_from": "patient.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient name"
+  },
+  {
+   "fetch_from": "patient.customer",
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "column_break_yurt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tel",
+   "fieldtype": "Phone",
+   "label": "Tel"
+  },
+  {
+   "fieldname": "section_break_bwmh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "statement_details",
+   "fieldtype": "Table",
+   "label": "Statement Details",
+   "options": "Invoice Table Statement"
+  },
+  {
+   "fieldname": "section_break_bmtv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_invoices",
+   "fieldtype": "Currency",
+   "label": "Total Invoices"
+  },
+  {
+   "fieldname": "total_outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Total Outstanding Amount"
+  },
+  {
+   "fieldname": "column_break_iaca",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "Total Paid"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-23 12:08:01.013687",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Statement",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

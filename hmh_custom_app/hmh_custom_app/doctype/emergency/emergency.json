@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-08-19 13:44:32.390807",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "nok_name",
+  "phone",
+  "relationship",
+  "referal",
+  "column_break_okge",
+  "back_to_patient_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "NOK Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "relationship",
+   "fieldtype": "Data",
+   "label": "Relationship"
+  },
+  {
+   "fieldname": "referal",
+   "fieldtype": "Data",
+   "label": "Referred From"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "HLC-EMERG-.YYYY.-"
+  },
+  {
+   "fieldname": "nok_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "NOK Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_okge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "back_to_patient_list",
+   "fieldtype": "Button",
+   "label": "Back to Patient List"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-14 13:14:23.886659",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Emergency",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

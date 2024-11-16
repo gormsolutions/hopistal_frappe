@@ -8,7 +8,7 @@ on:
   pull_request:
 
 concurrency:
-  group: develop-hopital_custom_app-${{ github.event.number }}
+  group: develop-hmh_custom_app-${{ github.event.number }}
   cancel-in-progress: true
 
 jobs:
@@ -38,6 +38,11 @@ jobs:
     steps:
       - name: Clone
         uses: actions/checkout@v3
+
+      - name: Find tests
+        run: |
+          echo "Finding tests"
+          grep -rn "def test" > /dev/null
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -84,10 +89,10 @@ jobs:
       - name: Install
         working-directory: /home/runner/frappe-bench
         run: |
-          bench get-app hopital_custom_app $GITHUB_WORKSPACE
+          bench get-app hmh_custom_app $GITHUB_WORKSPACE
           bench setup requirements --dev
           bench new-site --db-root-password root --admin-password admin test_site
-          bench --site test_site install-app hopital_custom_app
+          bench --site test_site install-app hmh_custom_app
           bench build
         env:
           CI: 'Yes'
@@ -96,6 +101,6 @@ jobs:
         working-directory: /home/runner/frappe-bench
         run: |
           bench --site test_site set-config allow_tests true
-          bench --site test_site run-tests --app hopital_custom_app
+          bench --site test_site run-tests --app hmh_custom_app
         env:
           TYPE: server

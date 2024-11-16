@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-07 12:35:54.035991",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "blood_pressure",
+  "spo2",
+  "pulse",
+  "body_temperature",
+  "weight_in_kilogram"
+ ],
+ "fields": [
+  {
+   "fieldname": "blood_pressure",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Blood Pressure"
+  },
+  {
+   "fieldname": "body_temperature",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Body Temperature"
+  },
+  {
+   "default": "now",
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "spo2",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "SPO2"
+  },
+  {
+   "fieldname": "pulse",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pulse"
+  },
+  {
+   "fieldname": "weight_in_kilogram",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight (Kg)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-07 14:00:33.366847",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Vital Signs Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

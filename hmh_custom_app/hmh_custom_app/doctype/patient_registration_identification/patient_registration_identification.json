@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-07-25 16:36:35.969046",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "patient_name",
+  "date_of_birth",
+  "full_age",
+  "age_summary",
+  "emergency_id",
+  "month",
+  "day",
+  "refered_from",
+  "column_break_ldgz",
+  "date",
+  "time",
+  "patient_phone",
+  "gender",
+  "nin_no",
+  "email",
+  "consulting_doctor",
+  "section_break_ajgc",
+  "patient_identification",
+  "residence_tab",
+  "country",
+  "district",
+  "subcounty",
+  "column_break_hous",
+  "village",
+  "parish",
+  "customer_details_tab",
+  "customer_group",
+  "customer",
+  "column_break_lxif",
+  "default_price_list",
+  "visit"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "patient_phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Patient Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ldgz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "full_age",
+   "fieldtype": "Int",
+   "label": "Full Age",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale",
+   "reqd": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Patient MRNO",
+   "options": "HMHCA-PID-.YYYY.-"
+  },
+  {
+   "fieldname": "village",
+   "fieldtype": "Data",
+   "label": "Village",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "residence_tab",
+   "fieldtype": "Tab Break",
+   "label": "Residence"
+  },
+  {
+   "fieldname": "nin_no",
+   "fieldtype": "Data",
+   "label": "NIN NO"
+  },
+  {
+   "fieldname": "customer_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Details "
+  },
+  {
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_group.default_price_list",
+   "fieldname": "default_price_list",
+   "fieldtype": "Link",
+   "label": "Default Price List",
+   "options": "Price List",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lxif",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hous",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subcounty",
+   "fieldtype": "Data",
+   "label": "Subcounty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "parish",
+   "fieldtype": "Data",
+   "label": "Parish",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "visit",
+   "fieldtype": "Data",
+   "label": "Visit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Day",
+   "read_only": 1
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ajgc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "patient_identification",
+   "fieldtype": "Table",
+   "label": "Next of KIN Details",
+   "options": "Patient Identification"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "age_summary",
+   "fieldtype": "Data",
+   "label": "Age in Summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consulting_doctor",
+   "fieldtype": "Link",
+   "label": "Consulting Doctor",
+   "options": "Healthcare Practitioner"
+  },
+  {
+   "fieldname": "emergency_id",
+   "fieldtype": "Link",
+   "label": "Emergency ID",
+   "options": "Emergency"
+  },
+  {
+   "fieldname": "refered_from",
+   "fieldtype": "Data",
+   "label": "Refered From"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-21 09:45:13.869450",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Patient Registration Identification",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "patient_name, patient_phone",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "patient_name"
+}

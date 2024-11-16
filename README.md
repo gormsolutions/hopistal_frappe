@@ -1,6 +1,6 @@
-## Hopital Custom App
+## HMH CUSTOM APP
 
-custom fiels and codes
+All the customization of HM Hospital
 
 #### License
 

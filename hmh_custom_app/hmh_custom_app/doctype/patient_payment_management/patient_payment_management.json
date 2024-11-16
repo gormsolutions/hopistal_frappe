@@ -1,0 +1,263 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-08-06 01:27:20.656860",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "column_break_ccdk",
+  "patient",
+  "patient_name",
+  "posting_date",
+  "posting_time",
+  "currency",
+  "column_break_dfrw",
+  "naming_series",
+  "due_date",
+  "company",
+  "cost_center",
+  "section_break_mser",
+  "sumbit_invoice",
+  "update_drafts",
+  "invoice_awaiting",
+  "update_totals",
+  "total_drafts",
+  "awaiting_payments",
+  "update_invoice_table",
+  "invoice_detailed_items",
+  "totals",
+  "section_break_yfbf",
+  "invoice_details",
+  "total_outstandings",
+  "section_break_qycy",
+  "cash_items",
+  "total_paid_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Patient",
+   "options": "Patient",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "patient.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fetch_from": "patient.custom_consulting_department",
+   "fieldname": "cost_center",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Department",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_dfrw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "HMHCA-PPM-.YYYY.-"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Due Date",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "cash_items",
+   "fieldtype": "Table",
+   "label": "Payment Collection",
+   "options": "Modes of Payment Items"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Total Paid Amount"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_yfbf",
+   "fieldtype": "Section Break",
+   "label": "Outstanding Invoices Awaiting Payments"
+  },
+  {
+   "fieldname": "invoice_details",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Invoice Details",
+   "options": "Invoice Items Details"
+  },
+  {
+   "default": "UGX",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_awaiting",
+   "fieldtype": "Table",
+   "label": "Invoices Awaiting",
+   "options": "Drafted Invoices"
+  },
+  {
+   "fieldname": "total_outstandings",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Outstandings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_detailed_items",
+   "fieldtype": "Table",
+   "label": "Invoice Detailed Items",
+   "options": "Invoice Detailed Items"
+  },
+  {
+   "fieldname": "totals",
+   "fieldtype": "Currency",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "update_totals",
+   "fieldtype": "Button",
+   "label": "Update Totals"
+  },
+  {
+   "fieldname": "sumbit_invoice",
+   "fieldtype": "Button",
+   "label": "Sumbit Invoice"
+  },
+  {
+   "fieldname": "update_drafts",
+   "fieldtype": "Button",
+   "label": "Update Drafts"
+  },
+  {
+   "fieldname": "update_invoice_table",
+   "fieldtype": "Button",
+   "label": "Update Invoice Table"
+  },
+  {
+   "fieldname": "total_drafts",
+   "fieldtype": "Currency",
+   "label": "Total Drafts"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "section_break_mser",
+   "fieldtype": "Section Break",
+   "label": "Drafts"
+  },
+  {
+   "fieldname": "column_break_ccdk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qycy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "awaiting_payments",
+   "fieldtype": "Section Break",
+   "label": "Outstanding Invoices Awaiting Payments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Patient Payment Management",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-10-07 10:34:02.306635",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Patient Payment Management",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
