@@ -16,8 +16,10 @@
   "column_break_dfrw",
   "naming_series",
   "due_date",
+  "reciept_no",
   "company",
   "cost_center",
+  "walk_in_patient",
   "section_break_mser",
   "sumbit_invoice",
   "update_drafts",
@@ -42,9 +44,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Patient",
-   "options": "Patient",
-   "reqd": 1,
-   "search_index": 1
+   "options": "Patient"
   },
   {
    "fetch_from": "patient.patient_name",
@@ -216,12 +216,24 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "walk_in_patient",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "reciept_no",
+   "fieldtype": "Data",
+   "label": "Reciept No",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-07 10:34:02.306635",
+ "modified": "2024-11-26 17:13:27.850785",
  "modified_by": "Administrator",
  "module": "HMH CUSTOM APP",
  "name": "Patient Payment Management",

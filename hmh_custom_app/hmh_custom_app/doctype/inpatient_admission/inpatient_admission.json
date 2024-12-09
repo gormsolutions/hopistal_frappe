@@ -1,0 +1,254 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-10-10 17:47:36.883614",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_unob",
+  "naming_series",
+  "patient_id",
+  "patient_name",
+  "wardroom_number",
+  "wardroom_name",
+  "ward_no",
+  "assigned_bed",
+  "bed_no",
+  "column_break_twwm",
+  "admission_date",
+  "patient_type",
+  "time",
+  "doctor",
+  "attending_doctor",
+  "attending_doctor_name",
+  "cost_center",
+  "admission_status",
+  "section_break_ifhx",
+  "admission_reason",
+  "amended_from",
+  "doctors_prescription_tab",
+  "company",
+  "drug_prescription",
+  "lab_investigation_tab",
+  "lab_test_prescription",
+  "clinical_procedures_tab",
+  "table_qeay",
+  "sonography_tab",
+  "custom_radiology_items"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_unob",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "label": "Patient ID",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "admission_date",
+   "fieldtype": "Date",
+   "label": "Admission Date"
+  },
+  {
+   "fieldname": "wardroom_number",
+   "fieldtype": "Link",
+   "label": "Ward/Room",
+   "options": "Rooms"
+  },
+  {
+   "fieldname": "attending_doctor",
+   "fieldtype": "Link",
+   "label": "Attending Doctor",
+   "options": "Healthcare Practitioner"
+  },
+  {
+   "fieldname": "admission_reason",
+   "fieldtype": "Small Text",
+   "label": "Admission Reason"
+  },
+  {
+   "fieldname": "patient_type",
+   "fieldtype": "Link",
+   "label": "Patient Type",
+   "options": "Customer Group"
+  },
+  {
+   "fieldname": "column_break_twwm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "RC-IA-.YYYY.-"
+  },
+  {
+   "fieldname": "assigned_bed",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Assigned Bed",
+   "options": "Beds"
+  },
+  {
+   "fetch_from": "wardroom_number.ward_numbe",
+   "fieldname": "ward_no",
+   "fieldtype": "Data",
+   "label": "Ward No",
+   "options": "Rooms"
+  },
+  {
+   "fetch_from": "wardroom_number.ward_name",
+   "fieldname": "wardroom_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ward/Room Name",
+   "options": "Rooms"
+  },
+  {
+   "fetch_from": "assigned_bed.bed_number",
+   "fieldname": "bed_no",
+   "fieldtype": "Data",
+   "label": "Bed No",
+   "options": "Beds"
+  },
+  {
+   "fieldname": "section_break_ifhx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Inpatient Admission",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "patient_id.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Patient Name",
+   "options": "Patient"
+  },
+  {
+   "fetch_from": "attending_doctor.practitioner_name",
+   "fieldname": "attending_doctor_name",
+   "fieldtype": "Data",
+   "label": "Attending Doctor Name",
+   "options": "Healthcare Practitioner"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "admission_status",
+   "fieldtype": "Data",
+   "label": "Admission Status",
+   "options": "\nAdmission Scheduled\nAdmitted\nUnder Treatment\nDischarge Scheduled\nDischarged",
+   "read_only": 1
+  },
+  {
+   "fieldname": "doctors_prescription_tab",
+   "fieldtype": "Tab Break",
+   "label": "Doctors Prescription"
+  },
+  {
+   "fieldname": "drug_prescription",
+   "fieldtype": "Table",
+   "label": "Drug Prescription",
+   "options": "Inpatient Admission Items"
+  },
+  {
+   "fieldname": "lab_investigation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Lab Investigation"
+  },
+  {
+   "fieldname": "clinical_procedures_tab",
+   "fieldtype": "Tab Break",
+   "label": "Clinical Procedures"
+  },
+  {
+   "fieldname": "table_qeay",
+   "fieldtype": "Table",
+   "options": "Procedure Prescription"
+  },
+  {
+   "fieldname": "lab_test_prescription",
+   "fieldtype": "Table",
+   "label": "Lab",
+   "options": "Lab Prescription"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "doctor",
+   "fieldtype": "Link",
+   "label": "Doctor",
+   "options": "Healthcare Practitioner"
+  },
+  {
+   "default": "Royal Clouds Medical Center",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "sonography_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sonography"
+  },
+  {
+   "fieldname": "custom_radiology_items",
+   "fieldtype": "Table",
+   "label": "Sonography",
+   "options": "Radiology Items"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-26 16:58:34.622097",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Inpatient Admission",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

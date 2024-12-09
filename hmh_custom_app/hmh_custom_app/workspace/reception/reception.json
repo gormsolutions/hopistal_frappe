@@ -1,0 +1,79 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"qqgSRRaT0X\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reception</span>\",\"col\":12}},{\"id\":\"qqItoWALi8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Register Patient\",\"col\":3}},{\"id\":\"RtUdIcDKp9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vital Signs\",\"col\":3}},{\"id\":\"cdp_avg_S9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Emergency Registration\",\"col\":3}},{\"id\":\"emlvORmuas\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor's Prescription/PHARMACY\",\"col\":3}},{\"id\":\"JtsTW2UT59\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patient Admissions\",\"col\":3}}]",
+ "creation": "2024-10-02 14:09:06.952803",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 1,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Reception",
+ "links": [],
+ "modified": "2024-10-23 15:24:34.030795",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Reception",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 39.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Vital Signs",
+   "link_to": "Vital Signs",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Register Patient",
+   "link_to": "Patient",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Doctor's Prescription/PHARMACY",
+   "link_to": "Pharmacy",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Patient Admissions",
+   "link_to": "Inpatient Record",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Emergency Registration",
+   "link_to": "Emergency",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Reception"
+}

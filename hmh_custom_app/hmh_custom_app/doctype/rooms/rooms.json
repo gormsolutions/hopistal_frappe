@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-10-10 18:03:02.025529",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "ward_name",
+  "ward_numbe",
+  "department",
+  "column_break_hkqd",
+  "total_beds",
+  "occupied_beds",
+  "available_beds"
+ ],
+ "fields": [
+  {
+   "fieldname": "ward_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Ward Name"
+  },
+  {
+   "fieldname": "ward_numbe",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Ward Numbe"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Medical Department"
+  },
+  {
+   "fieldname": "total_beds",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Beds"
+  },
+  {
+   "fieldname": "occupied_beds",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Occupied Beds"
+  },
+  {
+   "fieldname": "available_beds",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Available Beds"
+  },
+  {
+   "fieldname": "column_break_hkqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "HCA-R-.YYYY.-"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-14 18:21:21.887595",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Rooms",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "ward_numbe,available_beds,occupied_beds",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ward_name"
+}

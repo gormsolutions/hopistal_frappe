@@ -20,6 +20,7 @@ def create_stock_entry(docname, warehouse, posting_date, posting_time, patient, 
     se.stock_entry_type = 'Material Issue'
     se.remarks = f"{patient} - {docname}"
     se.posting_date = posting_date
+    se.set_posting_time = 1,
     se.posting_time = posting_time
     se.custom_patient_id = patient
     se.custom_pharmacy_id = docname
@@ -31,10 +32,16 @@ def create_stock_entry(docname, warehouse, posting_date, posting_time, patient, 
     for item in pharmacy.drug_prescription:
         item_code = item.drug_code
         item_doc = frappe.get_doc('Item', item_code)
+        
+         # Include only items that maintain stock
+        if not item_doc.is_stock_item:
+            continue  # Skip items that don't maintain stock
+        
         uom = item_doc.stock_uom  # Retrieve the UOM from the Item document
         
         # Check if the item has batch tracking enabled
         has_batch = frappe.get_value('Item', item_code, 'has_batch_no')
+        # has_batch = frappe.get_value('Item', item_code, 'is_stock_item')
         
         if has_batch:
             # Get the batch with the highest available quantity

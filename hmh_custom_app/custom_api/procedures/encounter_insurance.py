@@ -67,7 +67,7 @@ def create_procedure(procedure, patient, encounter_id,date,practitioner):
     procedure_doc = frappe.new_doc('Clinical Procedure')
     procedure_doc.procedure_template = procedure.procedure  # Assuming lab_test has a field named lab_test_code
     procedure_doc.patient = patient
-    procedure_doc.custom_cost_center = "Theatre - HMH"
+    procedure_doc.custom_cost_center = patient_doc.custom_consulting_department
     procedure_doc.invoiced = 1
     procedure_doc.start_date = date
     procedure_doc.practitioner = practitioner

@@ -99,3 +99,17 @@ def on_submit(doc, method):
         frappe.db.rollback()
         frappe.log_error(message=str(e), title="Pharmacy Doc Creation Error")
         frappe.throw(_("An unexpected error occurred while creating the Pharmacy Doc. Please try again or contact support. Error details: {0}").format(str(e)))
+
+
+def ensure_treatment_is_included(doc, method):
+    # Check if the drug_prescription field is set
+    if doc.drug_prescription:
+        # Check if "treatment" exists in the drug_prescription list
+        treatment_included = any(item.medication == 'treatment' for item in doc.drug_prescription)
+        
+        # Throw an error if "treatment" is not found
+        if not treatment_included:
+            frappe.throw(_("Please include 'Treatment Fee' in the drug prescription for this patient."))
+
+                
+        

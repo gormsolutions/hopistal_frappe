@@ -44,6 +44,8 @@ def create_patient_encounter(patient, encounter_date, vital_signs, practitioner,
                 
                 # Save the updated draft Patient Encounter
                 patient_encounter.save(ignore_permissions=True)
+                # Commit the transaction to the database
+                frappe.db.commit()
                 
                 return {
                     "message": _("Vital Signs updated successfully in the existing draft Patient Encounter."),
@@ -60,7 +62,7 @@ def create_patient_encounter(patient, encounter_date, vital_signs, practitioner,
             "status": "Open",
             "consultation_charge": patient_doc.custom_invoice_no,  # Ensure this field exists in Patient doctype
             "practitioner": practitioner,
-            "patient_age":reg_doc.age_summary,
+            "patient_age": reg_doc.age_summary,
             "custom_vitals_id": vital_signs  # Ensure this field exists in Patient Encounter doctype
         })
         
@@ -75,6 +77,15 @@ def create_patient_encounter(patient, encounter_date, vital_signs, practitioner,
 
         # Insert the new Patient Encounter document
         patient_encounter.insert(ignore_permissions=True)
+        frappe.db.commit()
+        
+        # Update the Customer document if the patient has a linked customer
+        if patient_doc.customer:
+            customer_doc = frappe.get_doc("Customer", patient_doc.customer)
+            if customer_doc.custom_bill_status != 'Bill Later':
+                customer_doc.custom_bill_status = 'Bill Later'
+                customer_doc.save(ignore_permissions=True)
+                frappe.db.commit()
         
         return {
             "message": _("Direct the Patient to go and See the Doctor. Vital Signs updated successfully."),

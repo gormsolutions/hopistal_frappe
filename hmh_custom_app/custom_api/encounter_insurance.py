@@ -51,7 +51,7 @@ def update_lab_tests_payment_status(doc, method):
 
         if updated:
             patient_encounter.save()
-            frappe.db.commit()  # Commit changes to the database
+            # frappe.db.commit()  # Commit changes to the database
             frappe.msgprint(_("Patient Encount{0} Recieved successfully.").format(patient_encounter.name))
 
     return investigations

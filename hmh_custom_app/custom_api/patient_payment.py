@@ -110,6 +110,7 @@ def create_payments_mode(patient_payment):
         patie_payment_doc = frappe.get_doc("Patient Payment Management", patient_payment)
         patient = patie_payment_doc.patient
         company = patie_payment_doc.company
+        reciept_no = patie_payment_doc.reciept_no
 
         # Fetch the patient document linked in the patient payment
         if not frappe.db.exists("Patient", patient):
@@ -155,6 +156,7 @@ def create_payments_mode(patient_payment):
             payment_entry.payment_type = "Receive"
             payment_entry.party_type = "Customer"
             payment_entry.party = patient_doc.customer
+            payment_entry.reciept_no = reciept_no
             payment_entry.posting_date = frappe.utils.nowdate()
             payment_entry.company = company
             payment_entry.paid_amount = total_paid_amount

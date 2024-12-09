@@ -16,9 +16,13 @@ frappe.ui.form.on('Patient Payment Management', {
     update_drafts:function(frm){
         populateInvoiceDetailedItemsDraftes(frm);
     },
-    sumbit_invoice:function(frm){
+    // sumbit_invoice:function(frm){
+    //     submit_unique_invoices(frm);
+    // },
+    after_save: function(frm) {
         submit_unique_invoices(frm);
-    },
+        // Populate the table with detailed items
+      },
     on_submit: async function(frm) {
         // update_patient_bill_status(frm)
         const success = await submitPayments(frm);
@@ -376,13 +380,13 @@ function submit_unique_invoices(frm) {
         },
         callback: function(response) {
             if (response.message.status === 'error') {
-                frappe.msgprint(__('Error: {0}', [response.message.message]));
+                // frappe.msgprint(__('Error: {0}', [response.message.message]));
             } else {
-                let successMsg = __('Successfully submitted invoices: {0}', [response.message.submitted_invoices.join(', ')]);
+                // let successMsg = __('Successfully submitted invoices: {0}', [response.message.submitted_invoices.join(', ')]);
                 if (response.message.failed_invoices.length > 0) {
-                    successMsg += '<br>' + __('Failed to submit invoices: {0}', [response.message.failed_invoices.join(', ')]);
+                    // successMsg += '<br>' + __('Failed to submit invoices: {0}', [response.message.failed_invoices.join(', ')]);
                 }
-                frappe.msgprint(successMsg);
+                // frappe.msgprint(successMsg);
                 frm.reload_doc(); // Reload the form to reflect changes
             }
         },

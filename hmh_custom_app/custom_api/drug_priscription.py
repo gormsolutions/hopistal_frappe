@@ -3,7 +3,7 @@ from frappe import _
 from frappe.utils import flt
 
 @frappe.whitelist()
-def on_submit(patient_encounter, selected_drug_code, dosage, period):
+def on_submit(patient_encounter,  dosage, period, selected_drug_code=None,):
     try:
         # Retrieve the encounter document
         encounter = frappe.get_doc('Patient Encounter', patient_encounter)

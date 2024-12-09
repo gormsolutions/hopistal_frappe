@@ -27,6 +27,7 @@
   "price_list",
   "inpatient_status",
   "inpatient_record",
+  "treatment_id",
   "payment_status",
   "approval_status",
   "sb_drug_prescription",
@@ -82,7 +83,7 @@
    "fieldname": "inpatient_record",
    "fieldtype": "Link",
    "label": "Inpatient Record",
-   "options": "Inpatient Record",
+   "options": "Inpatient Admission",
    "read_only": 1
   },
   {
@@ -199,8 +200,7 @@
    "fieldname": "sales_invoice_id",
    "fieldtype": "Link",
    "label": "Sales Invoice Id",
-   "options": "Sales Invoice",
-   "read_only": 1
+   "options": "Sales Invoice"
   },
   {
    "allow_on_submit": 1,
@@ -233,11 +233,19 @@
    "label": "Re Isue Drugs",
    "reqd": 1,
    "search_index": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "treatment_id",
+   "fieldtype": "Data",
+   "label": "Treatment ID",
+   "options": "Inpatient Admission",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-03 13:09:28.273469",
+ "modified": "2024-10-15 17:54:16.351089",
  "modified_by": "Administrator",
  "module": "HMH CUSTOM APP",
  "name": "Pharmacy",

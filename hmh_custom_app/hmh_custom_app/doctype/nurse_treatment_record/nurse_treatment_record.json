@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-10-14 18:26:53.462765",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_i8dg",
+  "naming_series",
+  "patient",
+  "inpatient_admission",
+  "ward",
+  "wardroom_number",
+  "column_break_dbvc",
+  "treatment_start_date",
+  "record_status",
+  "bedid",
+  "bed_number",
+  "amended_from",
+  "section_break_ouul",
+  "doctors_prescription",
+  "medication_administered"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_i8dg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "inpatient_admission",
+   "fieldtype": "Link",
+   "label": "Inpatient Admission",
+   "options": "Inpatient Admission"
+  },
+  {
+   "fieldname": "treatment_start_date",
+   "fieldtype": "Date",
+   "label": "Treatment Start Date",
+   "options": "Inpatient Admission"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "RC-IA-.YYYY.-"
+  },
+  {
+   "fieldname": "column_break_dbvc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Nurse Treatment Record",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "record_status",
+   "fieldtype": "Data",
+   "label": "Treatment Status",
+   "options": "Inpatient Admission",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ward.ward_numbe",
+   "fieldname": "wardroom_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ward Room Number",
+   "options": "Inpatient Admission"
+  },
+  {
+   "fetch_from": "bedid.bed_number",
+   "fieldname": "bed_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bed Number",
+   "options": "Inpatient Admission"
+  },
+  {
+   "fieldname": "section_break_ouul",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "medication_administered",
+   "fieldtype": "Table",
+   "label": "Medication Administered",
+   "options": "Medication Administered"
+  },
+  {
+   "fieldname": "doctors_prescription",
+   "fieldtype": "Table",
+   "label": "Doctor's Prescription",
+   "options": "Inpatient Admission Items"
+  },
+  {
+   "fieldname": "ward",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ward/Room",
+   "options": "Rooms"
+  },
+  {
+   "fieldname": "bedid",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "BedId",
+   "options": "Beds"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-13 14:33:38.295407",
+ "modified_by": "Administrator",
+ "module": "HMH CUSTOM APP",
+ "name": "Nurse Treatment Record",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

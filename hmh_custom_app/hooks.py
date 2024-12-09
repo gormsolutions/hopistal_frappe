@@ -139,13 +139,13 @@ override_doctype_class = {
 # Hook on document methods and events
 
 doc_events = {
-    "Patient": {
-        "on_update": [
-            "hmh_custom_app.custom_api.patient.create_vital_signs_for_patient",
-            # "hmh_custom_app.custom_api.patient.validate_patient"
-        ],
-        # "validate": "hmh_custom_app.custom_api.patient.validate_patient"
-    },
+    # "Patient": {
+    #     "on_update": [
+    #         "hmh_custom_app.custom_api.patient.create_vital_signs_for_patient",
+    #         # "hmh_custom_app.custom_api.patient.validate_patient"
+    #     ],
+    #     # "validate": "hmh_custom_app.custom_api.patient.validate_patient"
+    # },
     
     "Pharmacy": {
         "on_submit": [
@@ -160,6 +160,8 @@ doc_events = {
     # },
     
     "Patient Encounter": {
+        # Validate event for ensuring treatment is included
+        "validate": "hmh_custom_app.doctor_jouney_prescription.invoice_drug_prescription.ensure_treatment_is_included",
         "on_update": [
             # Lab prescription
             "hmh_custom_app.custom_api.invoice_lab_tests.on_submit",
@@ -183,7 +185,22 @@ doc_events = {
             "hmh_custom_app.custom_api.self_request.request.create_radiology",
             # apps/hmh_custom_app/hmh_custom_app/custom_api/self_request/request.py
         ]
-    }
+    },
+    "Inpatient Admission": {
+        "on_update": [
+            # Lab prescription
+            "hmh_custom_app.custom_api.inpatient.invoice_lab_tests.on_submit",
+            # Radiology
+            "hmh_custom_app.custom_api.inpatient.invoice_radiology.on_submit",
+        ]
+    },
+    # "Patient": {
+    #     "on_update": [
+    #         # Lab prescription apps/hmh_custom_app/hmh_custom_app/custom_api/vitual_signs.py
+    #         "hmh_custom_app.custom_api.vitual_signs.create_vital_signs_patient",
+
+    #     ]
+    # }
 }
 
 # Scheduled Tasks

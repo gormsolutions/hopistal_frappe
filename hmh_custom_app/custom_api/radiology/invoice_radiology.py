@@ -89,6 +89,7 @@ def on_submit(doc, method):
             else:
                 # Save or update the Sales Invoice as a draft
                 sales_invoice.save(ignore_permissions=True)
+                # sales_invoice.submit()
                 frappe.msgprint(_("Please Go to the Reception. A Sales Invoice {0} was created/updated successfully.").format(sales_invoice.name))
                 
                 # Update `custom_invoice_status` in the Lab Prescription table

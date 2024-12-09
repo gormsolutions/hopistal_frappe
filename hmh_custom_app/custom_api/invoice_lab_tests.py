@@ -89,6 +89,7 @@ def on_submit(doc, method):
             if has_items_to_add:
                 # Save or update the Sales Invoice as a draft
                 sales_invoice.save(ignore_permissions=True)
+                # sales_invoice.submit()
                 frappe.msgprint(_("Sales Invoice {0} created/updated successfully.").format(sales_invoice.name))
                 
                 # Update the `custom_invoice_status` in the Lab Test Prescription table
@@ -98,16 +99,17 @@ def on_submit(doc, method):
                 
                 doc.save()
                 frappe.db.commit()
-            
+         
                 # Check if the customer group is 'Insurance' and create a Lab Test 
                 if customer.customer_group == "Insurance" or customer.custom_bill_status == "Bill Later":
                     for lab_test in doc.lab_test_prescription:
                         if lab_test.custom_lab_status != "Fully Paid" or lab_test.custom_invoice_status != "Invoice Created":
-                            lab_test.custom_lab_status = "Fully Paid"
+                        # Update the lab test status fields
+                            lab_test.custom_lab_status = "Billed For Later"
                             lab_test.custom_invoice_status = "Invoice Created"
                             lab_test.custom_results_status = "Processing Results"
                             lab_test.invoiced = 1
-                       
+
                             # Create a new Lab Test document
                             lab_test_doc = frappe.new_doc('Lab Test')
                             lab_test_doc.template = lab_test.lab_test_code
@@ -118,7 +120,16 @@ def on_submit(doc, method):
                             lab_test_doc.practitioner = doc.practitioner
                             lab_test_doc.invoiced = 1
                             lab_test_doc.save()
-                            frappe.db.commit()  # Commit changes to the database
+
+                            # Link the new Lab Test document to the lab test entry
+                            lab_test.custom_labtest_id = lab_test_doc.name
+
+                    # Save the parent document to persist changes in child table fields
+                    doc.save()
+
+                    # Commit changes to the database
+                    frappe.db.commit()
+
             # else:
                 # If no items are added, show a message
                 # frappe.msgprint(_("No items were added to the Sales Invoice."))

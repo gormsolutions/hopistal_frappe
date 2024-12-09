@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Partners(Document):
+class Beds(Document):
 	pass

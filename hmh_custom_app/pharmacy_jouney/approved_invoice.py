@@ -172,8 +172,8 @@ def pharmacy_status(custom_payment_id):
                     'cost_center': patient_pharmacy.custom_cost_center
                 })
 
-            se.insert()
-            se.submit()
+            # se.insert()
+            # se.submit()
         
         elif (patient_pharmacy.approval_status != 'Approved To Be Issued' and
               any(invoice.outstanding_amount > 0 for invoice in matching_invoices)):

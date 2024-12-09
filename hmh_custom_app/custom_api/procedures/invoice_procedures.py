@@ -96,6 +96,7 @@ def on_submit(doc, method):
                 # Save or update the Sales Invoice as a draft
                 sales_invoice.save(ignore_permissions=True)
                 # sales_invoice.submit()
+                
                 frappe.msgprint(_("Sales Invoice {0} created/updated successfully.").format(sales_invoice.name))
                 
                 # Update `custom_invoice_status` in the Lab Prescription table
@@ -120,7 +121,7 @@ def on_submit(doc, method):
                             procedure_doc = frappe.new_doc('Clinical Procedure')
                             procedure_doc.procedure_template = procedure.procedure  # Assuming lab_test has a field named lab_test_code
                             procedure_doc.patient = patient_doc
-                            procedure_doc.custom_cost_center = "Theatre - HMH"
+                            procedure_doc.custom_cost_center = patient_doc.custom_consulting_department
                             # procedure_doc.custom_cost_center = "0003 - Theatre - BL"
                             procedure_doc.invoiced = 1
                             procedure_doc.start_date = doc.encounter_date
